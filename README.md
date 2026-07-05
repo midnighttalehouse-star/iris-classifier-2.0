@@ -162,15 +162,6 @@ Expected output:
 * Overfitting vs generalization
 * Saving models for reuse
 
----
-
-## 📦 Future Improvements
-
-* Add Random Forest / SVM models
-* Deploy using Flask or FastAPI
-* Build interactive web UI
-* Add feature scaling & tuning
-* Cross-validation improvements
 
 ---
 
