@@ -1,108 +1,157 @@
-# 🌸 Iris Classifier – Machine Learning Project
+# 🌸 Iris Classifier 2.0
 
-![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)
-![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-orange)
-![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+<p align="center">
 
----
-## 📌 Overview
+![Python](https://img.shields.io/badge/Python-3.9+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 
-This project is a complete **end-to-end Machine Learning pipeline** built using the classic **Iris dataset**.
-
-It demonstrates how a real-world ML workflow works:
-- Data loading
-- Training a model
-- Evaluating performance
-- Saving trained models
-- Visualizing results
-
-The model used is a **Decision Tree Classifier**, trained using `scikit-learn`.
+</p>
 
 ---
 
-## 🎯 Objective
+## 📖 Overview
 
-To classify iris flowers into three species:
-- 🌸 Setosa  
-- 🌿 Versicolor  
-- 🌺 Virginica  
+This repository demonstrates a complete **end-to-end supervised machine learning workflow** using the classic **Iris flower dataset** and **scikit-learn**.
 
-based on:
-- Sepal length
-- Sepal width
-- Petal length
-- Petal width
+The project walks through every major stage of a machine learning pipeline:
 
----
+- 📥 Loading data
+- 🔍 Exploring the dataset
+- ✂️ Train/Test split
+- 🌳 Training a Decision Tree Classifier
+- 🎯 Making predictions
+- 📈 Evaluating model performance
+- 💾 Saving the trained model
+- 📊 Visualizing results using a confusion matrix
 
-## 🧠 Tech Stack
-
-- Python 🐍
-- Scikit-learn 🤖
-- Matplotlib 📊
-- Seaborn 🎨
-- Jupyter Notebook 📓
-- Joblib 💾
+This project was completed as part of the **AI Fundamentals** course.
 
 ---
 
-## 📁 Project Structure
+# 🎯 Problem Statement
 
-```
+Given four measurements of an Iris flower:
 
-iris-classifier-2.0/
+- Sepal Length
+- Sepal Width
+- Petal Length
+- Petal Width
+
+predict which species the flower belongs to:
+
+🌸 Setosa
+
+🌿 Versicolor
+
+🌺 Virginica
+
+This is a **multi-class classification problem**.
+
+---
+
+# 📂 Project Structure
+
+```text
+iris-classifier-2.0
 │
 ├── data/
+│
 ├── notebooks/
 │   └── iris_model.ipynb
-│
-├── src/
-│   └── train.py
 │
 ├── outputs/
 │   ├── confusion_matrix.png
 │   └── model.joblib
+│
+├── src/
+│   └── train.py
 │
 ├── tests/
 │   └── test_train.py
 │
 ├── requirements.txt
 ├── README.md
-└── LICENSE
-
-````
+├── LICENSE
+└── .gitignore
+```
 
 ---
 
-## ⚙️ Installation
+# ⚙️ Technologies Used
 
-### 1. Clone the repository
+| Technology | Purpose |
+|------------|---------|
+| Python | Programming Language |
+| Scikit-learn | Machine Learning |
+| Matplotlib | Visualization |
+| Seaborn | Confusion Matrix |
+| Joblib | Model Serialization |
+| Jupyter Notebook | Experimentation |
+| Pytest | Unit Testing |
+
+---
+
+# 🔄 Machine Learning Workflow
+
+```text
+Load Dataset
+      │
+      ▼
+Explore Data
+      │
+      ▼
+Train/Test Split
+      │
+      ▼
+Train Decision Tree
+      │
+      ▼
+Predict Test Data
+      │
+      ▼
+Evaluate Accuracy
+      │
+      ▼
+Generate Confusion Matrix
+      │
+      ▼
+Save Trained Model
+```
+
+---
+
+# 🚀 Installation
+
+Clone the repository
+
 ```bash
 git clone https://github.com/midnighttalehouse-star/iris-classifier-2.0.git
 cd iris-classifier-2.0
-````
+```
 
-### 2. Create virtual environment
+Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-### 3. Activate environment
+Activate
 
-**Windows**
+### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-**Mac/Linux**
+### Linux / macOS
 
 ```bash
 source venv/bin/activate
 ```
 
-### 4. Install dependencies
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -110,9 +159,15 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 How to Run
+# ▶️ Run the Project
 
-### Run training script
+Default run
+
+```bash
+python src/train.py
+```
+
+or
 
 ```bash
 python src/train.py --test-size 0.2 --random-state 42
@@ -120,53 +175,92 @@ python src/train.py --test-size 0.2 --random-state 42
 
 ---
 
-## 📊 Model Performance
+# 📊 Results
 
-* Accuracy: ~95% – 100%
-* Algorithm: Decision Tree Classifier
-* Dataset: Iris (150 samples)
+Example output
 
----
+```text
+Accuracy: 1.0000
 
-## 📉 Confusion Matrix
-
-The model performance is visualized using a confusion matrix:
-
-```
+Confusion matrix saved to:
 outputs/confusion_matrix.png
+
+Model saved to:
+outputs/model.joblib
 ```
 
 ---
 
-## 🧪 Testing
+# 📈 Confusion Matrix
 
-Run unit tests using:
+The generated confusion matrix is automatically saved inside **outputs/**.
+
+<p align="center">
+
+<img src="outputs/confusion_matrix.png" width="650">
+
+</p>
+
+---
+
+# 💾 Generated Files
+
+Running the training script creates:
+
+```
+outputs/
+├── confusion_matrix.png
+└── model.joblib
+```
+
+---
+
+# 🧪 Running Tests
 
 ```bash
 pytest
 ```
 
-Expected output:
+Expected output
 
-```
+```text
 1 passed
 ```
 
 ---
 
-## 💡 Key Learnings
+# 📚 Key Learning Outcomes
 
-* End-to-end ML pipeline structure
-* Train/test splitting
-* Model evaluation techniques
-* Overfitting vs generalization
-* Saving models for reuse
+✅ Data preprocessing
 
+✅ Train/Test splitting
+
+✅ Decision Tree Classification
+
+✅ Model evaluation
+
+✅ Accuracy metrics
+
+✅ Confusion Matrix
+
+✅ Saving trained models
+
+✅ Basic software testing
 
 ---
 
-## 👨‍💻 Author
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# 👨‍💻 Author
 
 **Saddam Hussain**
-AI / ML Learner & Developer
-GitHub: [https://github.com/midnighttalehouse-star](https://github.com/midnighttalehouse-star)
+
+AI & Machine Learning Enthusiast
+
+GitHub
+
+https://github.com/midnighttalehouse-star
